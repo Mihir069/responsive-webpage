@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Web Page</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        header .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 30px;
+            margin-left: 20px;
+        }
+
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 24px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px;
+            background-color: #f4f4f4;
+        }
+
+        .service-item {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px #666;
+        }
+
+        .service-item .icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .service-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 40px;
+            background-color: #7d9bcb;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-section {
+            flex: 1;
+            margin: 10px;
+        }
+
+        footer .footer-section h4 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        footer .footer-section p, footer .footer-section a {
+            font-size: 16px;
+            color: #bbb;
+        }
+
+        footer .footer-section a {
+            display: block;
+            margin: 5px 0;
+            text-decoration: none;
+        }
+
+        footer .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header nav ul {
+                display: none;
+            }
+
+            header .hamburger {
+                display: block;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo">Logo</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger"
+                    aria-label="Toggle navigation">
+                    <span>&#9776;</span>
+                </div>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Our Website</h1>
+                <p>Your success is our priority</p>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="service-item">
+                <div class="icon">&#9733;</div>
+                <h3>Service One</h3>
+                <p>Short description of service one.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">&#9733;</div>
+                <h3>Service Two</h3>
+                <p>Short description of service two.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">&#9733;</div>
+                <h3>Service Three</h3>
+                <p>Short description of service three.</p>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-section contact">
+                <h4>Contact Us</h4>
+                <p>Email: example@email.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div class="footer-section social-media">
+                <h4>Follow Us</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="footer-section copyright">
+                <p>&copy; 2024 MyCompany. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            const navLinks = document.querySelector('header nav ul');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+        </script>
+    </body>
+</html>
